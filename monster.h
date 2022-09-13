@@ -9,18 +9,18 @@
 typedef struct {
 	char name[40];
 	char species[40];
-	int age;
+	unsigned int age;
 } Monster;
 	
 void setName(Monster* self, char* name, size_t length);
 
 void setSpecies(Monster* self, char* species, size_t length);
 
-void setAge(Monster* self, int age);
+void setAge(Monster* self, unsigned int age);
 
 const char* getName(Monster* self);
 
 const char* getSpecies(Monster* self);
 
-const int getAge(Monster*self);
+const unsigned int getAge(Monster* self);
 #endif
