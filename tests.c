@@ -24,11 +24,21 @@ void testTimer()
 {
 	Timer timer;
 	setSeconds(&timer, 25);
+	
+	TEST_ASSERT_EQUAL(25, getSeconds(&timer));
 
-	TEST_ASSERT_EQUAL(25, timer.seconds);
+	setMinutes(&timer, 1);
+	TEST_ASSERT_EQUAL(1, timer.minutes);
+	
+	char *myString;
 
+	myString = getTimeLeft(&timer);
+	TEST_ASSERT_EQUAL_STRING("01:25", myString);
 
+	free(myString);
 }
+
+
 
 int run_tests()
 {
