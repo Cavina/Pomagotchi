@@ -1,4 +1,5 @@
 #include "monster.h"
+#include "timer.h"
 #include "stdio.h"
 #include "unity.h"
 
@@ -19,12 +20,21 @@ void test_init()
 	TEST_ASSERT_EQUAL(0, monster.age);
 }
 
+void testTimer()
+{
+	Timer timer;
+	setSeconds(&timer, 25);
 
+	TEST_ASSERT_EQUAL(25, timer.seconds);
+
+
+}
 
 int run_tests()
 {
 	UNITY_BEGIN();
 	RUN_TEST(test_init);
+	RUN_TEST(testTimer);
 	return UNITY_END();
 
 }
